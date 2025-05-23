@@ -17,7 +17,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
-    // User 생성 / 조회 / 수정 / 삭제 만들기
 
     // 유저 생성
     @PostMapping("/signup")

@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import org.example.schedulerdev.User.entity.User;
 import org.example.schedulerdev.common.BaseEntity;
 
 @Getter
@@ -24,6 +26,11 @@ public class Schedule extends BaseEntity {
     @Column(columnDefinition = "longtext")
     private String contents;
 
+    @Setter
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     public Schedule(String username, String title, String contents) {
         this.username = username;
         this.title = title;
@@ -33,4 +40,5 @@ public class Schedule extends BaseEntity {
     public void updateContents(String contents) {
         this.contents = contents;
     }
+
 }

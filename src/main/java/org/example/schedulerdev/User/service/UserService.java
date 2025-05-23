@@ -36,6 +36,7 @@ public class UserService {
                 .toList();
 
     }
+
     // 특정 유저 조회
     public UserResponseDto findById(Long id) {
         Optional<User> findById = userRepository.findById(id);

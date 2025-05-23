@@ -1,6 +1,8 @@
 package org.example.schedulerdev.schedule.service;
 
 import lombok.RequiredArgsConstructor;
+import org.example.schedulerdev.User.entity.User;
+import org.example.schedulerdev.User.repository.UserRepository;
 import org.example.schedulerdev.schedule.dto.ScheduleResponseDto;
 import org.example.schedulerdev.schedule.entity.Schedule;
 import org.example.schedulerdev.schedule.repository.ScheduleRepository;
@@ -15,11 +17,15 @@ public class ScheduleService {
 
     private final ScheduleRepository scheduleRepository;
 
+    private final UserRepository userRepository;
+
     // 스케줄 생성 API
     public ScheduleResponseDto save(String username, String title, String contents) {
 
-        Schedule schedule = new Schedule(username,title,contents);
+        User findUser = userRepository.findMemberByUsernameOrElseThrow(username);
 
+        Schedule schedule = new Schedule(username,title,contents);
+        schedule.setUser(findUser);
         Schedule savedSchedule = scheduleRepository.save(schedule);
 
         return new ScheduleResponseDto(savedSchedule.getId(),savedSchedule.getTitle(),savedSchedule.getContents());
