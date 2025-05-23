@@ -1,6 +1,5 @@
 package org.example.schedulerdev.User.service;
 
-import at.favre.lib.crypto.bcrypt.BCrypt;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.example.schedulerdev.User.dto.LoginRequestDto;
