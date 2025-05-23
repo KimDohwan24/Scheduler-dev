@@ -7,10 +7,12 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.example.schedulerdev.common.BaseEntity;
 
 @Getter
 @Entity
+@Setter
 @Table(name = "users")
 @NoArgsConstructor
 public class User extends BaseEntity {
