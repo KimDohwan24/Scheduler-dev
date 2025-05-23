@@ -10,7 +10,7 @@ import org.example.schedulerdev.common.BaseEntity;
 
 @Getter
 @Entity
-@Table ( name = "schedule")
+@Table(name = "schedule")
 @RequiredArgsConstructor
 public class Schedule extends BaseEntity {
     @Id

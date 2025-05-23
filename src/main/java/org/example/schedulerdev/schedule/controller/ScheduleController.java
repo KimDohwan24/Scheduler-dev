@@ -37,14 +37,14 @@ public class ScheduleController {
     // 특정 스케줄 조회
     @GetMapping("/{id}")
     public ResponseEntity<ScheduleResponseDto> findById(@PathVariable Long id){
-        ScheduleResponseDto findschedule = scheduleService.findById(id);
+        ScheduleResponseDto findSchedule = scheduleService.findById(id);
 
-        return new ResponseEntity<>(findschedule,HttpStatus.OK);
+        return new ResponseEntity<>(findSchedule,HttpStatus.OK);
     }
 
     // 스케줄 수정
     @PatchMapping("/{id}")
-    public ResponseEntity<ScheduleResponseDto> updateschedule(
+    public ResponseEntity<ScheduleResponseDto> updateSchedule(
             @PathVariable Long id,
             @RequestBody UpdateScheduleDto updateScheduleDto
     ){
