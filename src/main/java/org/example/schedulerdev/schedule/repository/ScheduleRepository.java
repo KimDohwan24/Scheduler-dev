@@ -1,6 +1,5 @@
 package org.example.schedulerdev.schedule.repository;
 
-import org.example.schedulerdev.schedule.dto.ScheduleResponseDto;
 import org.example.schedulerdev.schedule.entity.Schedule;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.http.HttpStatus;
