@@ -72,6 +72,7 @@ public class UserService {
     }
 
     // 유저 삭제
+    @Transactional
     public void deleteUser(Long id, String password) {
         User user = userRepository.findByIdOrElseThrow(id);
 
